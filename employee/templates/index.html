@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h2 class="title">Venta de Ropa</h2>
+    <form action="/emp" method="post">
+        {% csrf_token %}
+        <div class="form card">
+            
+            <h3 class="card-title">Añadir producto</h3>
+            
+            <div>
+                <p>Id Producto:</p>{{ form.eid }}
+            </div>
+            <div>
+                <p>Tipo de Producto:</p>{{ form.etype }}
+            </div>
+            <div>
+                <p>Precio del Producto:</p>{{ form.eprice }}
+            </div>
+            <div>
+                <p>Cantidad Vendida:</p>{{ form.ecsell }}
+            </div>
+            <div>
+                <p>Tipo Identificacion cliente:</p>{{ form.etypeiden }}
+            </div>
+            <div>
+                <p>Identificacion cliente:</p>{{ form.eperson }}
+            </div>
+            <div>
+                <br>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

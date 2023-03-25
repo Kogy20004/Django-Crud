@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id Producto</th>
+                <th>Tipo de Producto</th>
+                <th>Precio del Producto</th>
+                <th>Cantidad Vendida</th>
+                <th>Tipo Identificacion cliente</th>
+                <th>Identificacion cliente</th>
+                <th class="acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr > 
+
+                <td>{{ employee.eid }}</td>
+                <td>{{ employee.etype }}</td>
+                <td>{{ employee.eprice }}</td>
+                <td>{{ employee.ecsell }}</td>
+                <td>{{ employee.etypeiden }}</td>
+                <td>{{ employee.eperson }}</td>
+                <td class="accion">
+                    <a href="/edit/{{employee.id}}">Edit</a>
+                    <a href="/delete/{{employee.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a href="/emp" style="color: white;">add now record</a></button>
+</body>
+
+</html>
