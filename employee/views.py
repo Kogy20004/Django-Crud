@@ -21,7 +21,7 @@ def show(request):
     employees = Employee.objects.all()
     return render(request, 'show.html', {'employees': employees})
 
-21
+
 def edit(request, id):
     employee = Employee.objects.get(id=id)
     return render(request, 'edit.html', {'employee': employee})
